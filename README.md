@@ -48,7 +48,6 @@ The dataset contains fields such as:
 - Python
 - Pandas
 - NumPy
-- Matplotlib / Seaborn (where applicable)
 - Visual Studio Code
 
 ## Project Workflow
