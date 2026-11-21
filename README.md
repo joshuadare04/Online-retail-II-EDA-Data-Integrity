@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="project-banner.png" alt="Online Retail II - EDA and Data Integrity Project Banner" width="100%">
+</p>
 # Online Retail II – Exploratory Data Analysis & Data Integrity
 
 **A Python-based data cleaning, integrity investigation, and exploratory analysis project.**
