@@ -1,0 +1,16 @@
+# Generated datasets
+Cleaned Data/*.csv
+
+# Generated investigation outputs
+Investigation Results/*.csv
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+.venv/
+
+# Temporary files
+*.tmp
