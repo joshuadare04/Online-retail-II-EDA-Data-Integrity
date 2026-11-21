@@ -1,47 +1,44 @@
-# Online Retail II – Exploratory Data Analysis and Data Integrity Assessment
+# Online Retail II – Exploratory Data Analysis & Data Integrity
+
+**A Python-based data cleaning, integrity investigation, and exploratory analysis project.**
+
+Part of the **Progree Data Analytics Internship Programme – Task 2**.
+
+---
 
 ## Project Overview
 
-This project focuses on Exploratory Data Analysis (EDA), data cleaning, and data integrity assessment using the Online Retail II dataset.
+This project investigates the quality, consistency, and business value of the Online Retail II dataset.
 
-The objective was to investigate the structure and quality of the dataset, identify inconsistencies and anomalies, clean and prepare the data, and uncover meaningful business insights through Python-based analysis.
+The work covers the complete analytical process, from initial dataset profiling and data cleaning to anomaly investigation, exploratory analysis, and final data validation.
 
-The project was completed as part of the **Progree Data Analytics Internship Programme – Task 2: EDA and Data Integrity**.
+Rather than automatically removing unusual records, the project focuses on investigating their context and understanding their potential business meaning.
 
 ## Project Objectives
 
-- Inspect and understand the structure of the dataset.
+- Profile and understand the original dataset.
 - Identify and remove duplicate records.
-- Investigate missing values and data inconsistencies.
-- Examine negative quantities, zero prices, and negative prices.
-- Investigate cancellations, returns, and adjustment records.
-- Validate transaction dates and identify unusual records.
-- Perform exploratory analysis across products, customers, countries, and time.
-- Prepare a reliable dataset for further analysis.
+- Investigate missing values and inconsistencies.
+- Examine cancellations, returns, and adjustment transactions.
+- Validate transaction dates and numerical fields.
+- Investigate unusual quantities, prices, and transaction values.
+- Analyse product, customer, geographical, and temporal performance.
+- Prepare reliable datasets for further analysis.
 
-## Dataset Description
+## Dataset
 
-The Online Retail II dataset contains historical transactional records from a UK-based online retailer.
+The project uses the **Online Retail II** dataset, containing historical transactions from a UK-based online retailer.
 
-It originally consists of two worksheets:
+The original workbook contains two worksheets:
 
 - Year 2009–2010
 - Year 2010–2011
 
-**Combined original records:** 1,067,371
+**Original combined records:** 1,067,371
 
-The dataset contains fields such as:
+Key fields include Invoice, StockCode, Description, Quantity, InvoiceDate, Price, Customer ID, and Country.
 
-- Invoice
-- StockCode
-- Description
-- Quantity
-- InvoiceDate
-- Price
-- Customer ID
-- Country
-
-**Note:** The original Excel dataset is not included in this repository. Users should obtain the dataset separately and place it in the appropriate location before running the scripts.
+The original dataset is not included in this repository. It must be obtained separately before reproducing the analysis.
 
 ## Tools and Technologies
 
@@ -52,25 +49,25 @@ The dataset contains fields such as:
 
 ## Project Workflow
 
-The project followed a structured data analysis workflow:
-
-1. **Dataset Profiling:** Examined the original worksheets, dimensions, columns, missing values, and duplicate records.
-2. **Data Cleaning:** Combined the worksheets, removed duplicate records, and recovered missing product descriptions where possible.
-3. **Data Quality Assessment:** Investigated missing values, negative quantities, zero prices, negative prices, and other inconsistencies.
-4. **Data Integrity Investigation:** Examined cancellations, adjustments, unusual transactions, and date consistency.
-5. **Data Preparation:** Created enriched and analysis-ready datasets.
-6. **Exploratory Data Analysis:** Investigated overall sales, product performance, customer behaviour, geographical distribution, and sales trends.
-7. **Outlier Investigation:** Applied the Interquartile Range (IQR) method to identify unusual quantities, unit prices, and transaction values.
-8. **Final Validation:** Conducted a final assessment of the cleaned and analysis-ready data.
+| Stage | Description |
+|---|---|
+| Dataset Profiling | Examined dataset structure, dimensions, missing values, and duplicates. |
+| Data Cleaning | Combined worksheets, removed duplicates, and recovered missing descriptions where possible. |
+| Data Quality Assessment | Investigated missing values, negative quantities, and unusual prices. |
+| Data Integrity Investigation | Examined cancellations, adjustments, and date consistency. |
+| Data Preparation | Created enriched and analysis-ready datasets. |
+| Exploratory Analysis | Investigated sales, products, customers, geography, and time-based performance. |
+| Outlier Investigation | Applied the IQR method to identify unusual transactions. |
+| Final Validation | Assessed the quality of the resulting datasets. |
 
 ## Key Data Quality Findings
 
-| Data Quality Check | Finding |
+| Metric | Result |
 |---|---:|
-| Original combined records | 1,067,371 |
+| Original records | 1,067,371 |
 | Duplicate records removed | 34,335 |
 | Deduplicated records | 1,033,036 |
-| Missing product descriptions remaining | 1,301 |
+| Missing descriptions remaining | 1,301 |
 | Missing Customer IDs | 235,151 |
 | Zero-price records | 6,014 |
 | Negative-price records | 5 |
@@ -78,73 +75,98 @@ The project followed a structured data analysis workflow:
 | Invalid transaction dates | 0 |
 | Analysis-ready records | 1,033,031 |
 
-Not every unusual record was automatically removed. Records such as cancellations, negative quantities, and zero-price transactions were investigated to understand their possible business meaning.
+Unusual records were investigated rather than indiscriminately deleted, helping preserve meaningful transactional information.
 
 ## Key Business Insights
 
-- Total sales revenue from the defined sales records was approximately **20.47 million**.
-- The analysis identified **5,881 customers** with identifiable customer IDs.
+- Total sales revenue was approximately **20.47 million**.
+- The analysis identified **5,881 customers** with identifiable Customer IDs.
 - The dataset contained **4,984 unique products**.
-- The United Kingdom contributed approximately **85.02%** of total sales revenue.
+- The United Kingdom contributed approximately **85.02%** of total revenue.
 - November 2011 recorded the highest monthly revenue, at approximately **1.50 million**.
-- A small group of high-value customers contributed a significant share of identifiable customer revenue.
-- Several unusually high-quantity transactions were identified and flagged for further investigation rather than automatically removed.
+- The top ten identifiable customers contributed approximately **16.04%** of identifiable customer revenue.
+- Several unusually high-quantity transactions were flagged for further investigation.
 
 ## Repository Structure
 
 ```text
-Task 2 - Data Integrity/
+Online-retail-II-EDA-Data-Integrity/
 │
 ├── Python Scripts/
 │   ├── 01_dataset_profiling.py
 │   ├── 02_data_cleaning.py
 │   ├── 03_data_quality_validation.py
-│   ├── ...
+│   ├── 04_anomaly_investigation.py
+│   ├── 05_cancellation_analysis.py
+│   ├── 06_return_investigation.py
+│   ├── 07_final_data_preparation.py
+│   ├── 08_eda_overview.py
+│   ├── 09_product_analysis.py
+│   ├── 10_customer_analysis.py
+│   ├── 11_geographical_analysis.py
+│   ├── 12_cancellation_returns_analysis.py
+│   ├── 13_time_based_analysis.py
+│   ├── 14_outlier_investigation.py
+│   ├── 15_final_data_quality_assessment.py
 │   └── 16_date_validation.py
-│
-├── Cleaned Data/
-│   ├── online_retail_II_deduplicated.csv
-│   ├── online_retail_II_full_enriched.csv
-│   └── online_retail_II_analysis_ready.csv
-│
-├── Investigation Results/
-│   └── Generated investigation and analysis outputs
 │
 ├── Final Documentation/
 │   └── Online_Retail_II_EDA_and_Data_Integrity_Report.docx
 │
+├── .gitignore
 └── README.md
 ```
 
+Generated datasets and investigation outputs are not included in the published repository.
+
 ## How to Run the Project
 
-1. Obtain the Online Retail II dataset separately.
-2. Place the original Excel workbook in the project directory or update the input file path in the relevant Python scripts.
-3. Install the required libraries:
+### 1. Requirements
+
+Install Python and the required libraries:
 
 ```bash
-pip install pandas numpy matplotlib seaborn openpyxl
+pip install pandas numpy openpyxl
 ```
 
-4. Run the Python scripts in numerical order from the `Python Scripts` folder.
-5. Review the generated datasets in `Cleaned Data` and the investigation outputs in `Investigation Results`.
+### 2. Obtain the Dataset
 
-**Important:** Some scripts depend on files generated by earlier scripts. Run them in sequence and ensure the input and output paths are correctly configured.
+Obtain the Online Retail II Excel workbook separately.
+
+### 3. Configure File Paths
+
+Review the input and output paths in the Python scripts. Ensure the source workbook and required output directories are correctly configured.
+
+### 4. Execute the Scripts
+
+Run the scripts in numerical order, beginning with:
+
+```bash
+python "Python Scripts/01_dataset_profiling.py"
+```
+
+Continue through the remaining scripts, as some depend on datasets generated by earlier stages.
 
 ## Documentation
 
-The `Final Documentation` folder contains the detailed project report, covering the methodology, data cleaning process, integrity investigations, exploratory analysis, key findings, recommendations, and conclusion.
+The `Final Documentation` folder contains the detailed project report, including:
+
+- Methodology
+- Data cleaning and preparation
+- Data quality and integrity investigations
+- Exploratory analysis
+- Key findings
+- Recommendations
+- Conclusion
 
 ## Conclusion
 
 This project demonstrates a structured approach to data profiling, cleaning, validation, integrity assessment, and exploratory data analysis.
 
-Beyond identifying data quality issues, the investigation focused on understanding the context behind unusual records and preserving meaningful business information.
-
-The resulting analysis-ready dataset provides a more reliable foundation for further business intelligence and analytical work.
+It also highlights the importance of investigating unusual records before making decisions about their removal, ensuring that data preparation does not eliminate potentially valuable business information.
 
 ---
 
 **Project:** Progree Data Analytics Internship – Task 2  
-**Focus:** Exploratory Data Analysis and Data Integrity  
-**Tools:** Python, Pandas, NumPy, Visual Studio Code
+**Focus:** Exploratory Data Analysis & Data Integrity  
+**Primary Language:** Python
